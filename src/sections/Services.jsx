@@ -1,5 +1,17 @@
+import React from 'react';
+import { services } from '../constants';
+import ServiceCard from '../components/ServiceCard';
+
 const Services = () => {
-  return <div>Services</div>;
+  return (
+    <section className='flex justify-center items-center flex-wrap gap-5 max-container'>
+      {services.map((service) => (
+        <React.Fragment key={service.label}>
+          <ServiceCard {...service} />
+        </React.Fragment>
+      ))}
+    </section>
+  );
 };
 
 export default Services;
